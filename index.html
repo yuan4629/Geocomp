@@ -21,6 +21,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
   <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.27.0/gradio.js"></script>
+  <script src="./index.js"></script>
 </head>
 
 
@@ -332,7 +333,7 @@
         <div class="content has-text-justified">
           <p>
             In this section, we introduce GeoCoT, a novel chain-of-thought
-prompting framework for graph-based and geolocation tasks. GeoCoT aims to improve LVMs’ performance on geographic reasoning tasks without relying on any additional prior information.
+prompting framework for graph-based and geolocation tasks. GeoCoT aims to improve LVMs' performance on geographic reasoning tasks without relying on any additional prior information.
          </p>
         </div>
       </div>
@@ -407,9 +408,60 @@ prompting framework for graph-based and geolocation tasks. GeoCoT aims to improv
               </figure>
             </div>
           </div>
-        </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-six-fifths">
+              <div class="content has-text-justified">
+                <h3 class="title is-4">Interactive Street View Demo</h3>
+                <p>
+                  For better visualization of our dataset, this demo allows you to load a specific street view location by entering the dataset index id.
+                </p>
+                <div class="field has-addons" style="margin-bottom: 20px;">
+                  <div class="control is-expanded">
+                    <input id="api-key-input" class="input" type="text" placeholder="Enter your Google Maps API Key">
+                  </div>
+                  <div class="control">
+                    <button id="load-map-btn" class="button is-primary">Load Map</button>
+                  </div>
+                </div>
+                
+                <div class="field">
+                  <div class="control">
+                    <button id="test-api-btn" class="button is-info">Test API Key</button>
+                  </div>
+                  <p class="help">Test if the API key is valid</p>
+                </div>
+                
+                <div class="field has-addons">
+                  <div class="control is-expanded">
+                    <input id="pano-id-input" class="input" type="text" placeholder="Enter Dataset Index ID">
+                  </div>
+                  <div class="control">
+                    <button id="load-pano-btn" class="button is-success">Load Street View</button>
+                  </div>
+                </div>
+                <p class="help">Enter a Street View Pano ID to load specific location</p>
+                
+                <!-- <div class="field">
+                  <div class="control">
+                    <button id="load-default-map-btn" class="button is-warning">Load Default Map</button>
+                  </div>
+                  <p class="help">使用默认API密钥加载地图（可能有使用限制）</p>
+                </div> -->
+                
+                <div id="map-container" style="display: none;">
+                  <div id="map" style="height: 500px; width: 100%; margin: 20px 0;"></div>
+                </div>
+                
+                <div id="map-error" class="notification is-danger" style="display: none;">
+                  <button class="delete"></button>
+                  <p>Error loading map. Please check your API key and try again.</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <br>
           
+
         <!-- Dataset Samples
         <div class="container is-max-desktop">
           <div class="columns is-centered">

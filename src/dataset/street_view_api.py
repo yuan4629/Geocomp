@@ -284,7 +284,7 @@ if __name__ == "__main__":
     #
     # Replace the following google_map_api_key with a valid API key
 
-    google_map_api_key = "AIzaSyA2gP66fP9yj26bt3JoVVdmv28wV1mdsoA"
+    google_map_api_key = "xxx"
     app_port = 6657    # It is recommended to use ports higher than 1024
     api_port = 5200
     lat = 42.345573
