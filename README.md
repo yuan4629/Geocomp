@@ -66,3 +66,16 @@ This repository contains various scripts used for data preparation, inference, e
 - **yuce.py**  
   Uses GPT-4 to extract a specific location from text, then converts it into latitude/longitude using the Google Maps API.
 
+# Dataset on Hugging Face
+We have also released a public dataset on Hugging Face to support reproduction and further research:
+👉 https://huggingface.co/datasets/ShirohAO/tuxun
+
+This dataset contains:
+
+- All metadata used in our experiments
+
+- The standardized metadata format
+
+- The list of 500 panoIDs used in our benchmark evaluation
+
+Feel free to explore and cite if you find it useful!
