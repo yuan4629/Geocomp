@@ -91,7 +91,10 @@ source venv/bin/activate  # Linux/macOS
 # 安装依赖
 pip install -r requirements.txt # 请确保 requirements.txt 文件存在且包含所有依赖
 # 其他必要的设置步骤... (例如：API密钥配置)
-🚀 使用说明# 如何运行 GeoCoT 进行推理和预测
+```
+🚀 使用说明
+```
+# 如何运行 GeoCoT 进行推理和预测
 python src/Geocot/run_geocot.py 
 # 如何使用 GeoEval 进行评估
 python src/Geoeval/evaluate_model.py 
