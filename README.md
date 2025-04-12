@@ -39,10 +39,12 @@ Geocomp 是一个专注于**图像地理定位** **Geolocation**的研究项目�
 **Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework**
 [https://arxiv.org/abs/2502.13759](https://arxiv.org/abs/2502.13759)
 
-![GeoCoT 方法示意图](docs/rethinking.png)
-![关键实验结果图](docs/assets/results_summary.png)
+### 💡 重新思考地理定位任务
 
-## 💡 重新思考地理定位任务
+![GeoCoT 方法示意图](docs/rethinking.png)
+![关键实验结果图](docs/table1.png)
+
+
 
 传统的地理定位方法主要依赖于分类（将地球划分为网格）或检索（匹配相似图像）。这些方法在精度和可扩展性方面存在局限。受人类逐步缩小范围（从宏观观察到微观细节）进行定位的启发，我们提出了一种新的范式：**通过生成式的、分步的自然语言推理过程来预测地理位置**。GeoCoT 框架正是为实现这一范式而设计，旨在提高定位的准确性和可解释性。
 
