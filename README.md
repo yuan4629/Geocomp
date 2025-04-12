@@ -71,7 +71,6 @@ Geocomp/
 │   ├── Geocot/            # GeoCoT 核心推理框架的实现与测试代码
 │   └── Geoeval/           # GeoEval 评估体系的实现代码 (包含各种评估指标和工具)
 ├── requirements.txt       # 项目 Python 依赖库列表
-├── README_zh.md           # 本 README 文件 (中文版)
 ├── README.md              # README 文件 (英文版)
 └── ...                    # 其他配置文件、脚本等
 ```
@@ -148,7 +147,7 @@ python src/baseline/run.py --config [配置文件路径]
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-
+```
 
 
 
