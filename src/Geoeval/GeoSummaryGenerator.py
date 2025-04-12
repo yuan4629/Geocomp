@@ -2,7 +2,7 @@ import openai
 import os
 
 # 设置 OpenAI API 密钥
-openai.api_key = "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"
+openai.api_key = ""
 
 def process_image(image_path):
     """处理单张图片并与 GPT 进行一轮对话"""
