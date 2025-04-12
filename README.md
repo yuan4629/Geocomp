@@ -11,8 +11,7 @@ Geocomp 是一个专注于**图像地理定位** **Geolocation**的研究项目�
 3.  **GeoEval**: 一套用于评估地理定位模型性能和推理过程的指标。
 
 本项目旨在通过这套框架解决当前地理定位研究中的关键瓶颈，推动领域发展。
-
-(docs/assets/label.png)
+![GeoCoT 方法示意图](docs/assets/label.png)
 
 ## ✨ 主要特性
 
