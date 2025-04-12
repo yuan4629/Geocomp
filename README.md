@@ -1,13 +1,5 @@
 # Geocomp: Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2502.13759">
-    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2502.13759-b31b1b.svg">
-  </a>
-  &nbsp;&nbsp; <a href="https://huggingface.co/papers/2502.13759">
-    <img alt="Hugging Face Papers" src="https://img.shields.io/badge/🤗%20Hugging%20Face-Papers-yellow">
-  </a>
-</p>
 
 ## 📝 Introduction
 
@@ -47,7 +39,6 @@ This project aims to tackle key bottlenecks in current geolocation research thro
 For detailed information about this project, methodology, and comprehensive experimental results, please refer to our arXiv paper:
 
 **Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework**
-[https://arxiv.org/abs/2502.13759](https://arxiv.org/abs/2502.13759)
 
 ### 💡 Rethinking the Geolocation Task
 
@@ -80,3 +71,67 @@ Geocomp/
 ├── README_zh.md          # This README file (Chinese version)
 ├── README.md             # README file (English version)
 └── ...                   # Other configuration files, scripts, etc.
+```
+Key Directory Descriptions:
+
+* **`src/baseline`**: Contains implementation code and running scripts for various baseline models used in comparative experiments.
+* **`src/Dataset`**: Includes code related to data downloading, preprocessing, data loaders, and interacting with APIs like Google Street View to fetch image data (e.g., `street_view_api.py`).
+* **`src/Geocot`**: Contains the core logic code implementing the GeoCoT reasoning framework, as well as scripts for running and testing the method.
+* **`src/Geoeval`**: Provides the complete implementation of the GeoEval evaluation suite, including scripts for calculating geographic distance errors, various classification/regression metrics, similarity assessment between reasoning chains and ground truth, and hallucination detection functionalities.
+* **`Hallucination`**: Contains the raw data (CSV format) from detailed manual hallucination evaluations performed on the reasoning outputs of different models (our method GeoCoT and benchmarks GeoReasoners, GPT-4o).
+* **`docs`**: Stores images, charts (like `case.png`), and potentially supplementary PDF materials used in this documentation and the project homepage.
+
+## 📊 Hallucination Evaluation
+
+To thoroughly evaluate the credibility of the model-generated reasoning content, we conducted meticulous manual hallucination checks on the model outputs. The evaluation process strictly adhered to predefined criteria, primarily focusing on the following three types of hallucinatory errors:
+
+1.  **Object Hallucination (OH):** The model describes objects, features, or elements that *do not actually exist* in the image.
+2.  **Fact Hallucination (FH):** The model states information that *contradicts* generally accepted geographical, cultural, or common-sense facts (e.g., incorrect landmark names, inconsistent geographical relationships, inaccurate climate descriptions).
+3.  **Attribution Hallucination (AH):** The model *incorrectly interprets* elements actually present in the image, or *erroneously attributes* their properties, origins, or meanings to the wrong country, region, culture, or object.
+
+<p align="center">
+  <img src="docs/human.png" alt="Hallucination Statistics" width="600"/>
+</p>
+
+Each evaluation sample was independently judged by human annotators with relevant geographical background knowledge. Annotators carefully compared the original street view image with the model's reasoning text, checking item by item for the presence of the three types of hallucination issues mentioned above. Detailed evaluation statistics are stored in the CSV files within the Hallucination/ directory.
+
+## ⚙️ Installation
+```bash
+# Clone the repository
+git clone https://github.com/ZiruiSongBest/Geocomp.git
+cd Geocomp
+# Create a virtual environment (recommended)
+conda create --name geocomp python=3.10
+conda activate geocomp
+# Install dependencies
+pip install -r requirements.txt # Please ensure requirements.txt exists and contains all dependencies
+# Other necessary setup steps... (e.g., API key configuration)
+```
+
+## 🚀 Usage Instructions
+```bash
+# How to run GeoCoT for reasoning and prediction
+python src/Geocot/run_geocot.py 
+# How to use GeoEval for evaluation
+python src/Geoeval/evaluate_model.py 
+# How to run baseline models
+python src/baseline/[some_baseline_model]/run.py --config [path_to_config_file]
+```
+## 📄 License
+
+This project is licensed under the **MIT** License.
+Please see the `LICENSE` file in the project root directory for details.
+
+## 📧 Contact & Citation
+
+**Contact**
+
+If you have any questions about this project, or if you have used any part of this project in your research, please feel free to contact us through various channels.
+
+**Citation**
+
+If the dataset (GeoComp), method (GeoCoT), or evaluation tools (GeoEval) from this project have been helpful to your research work, please consider citing our paper:
+
+```bibtex
+
+```
