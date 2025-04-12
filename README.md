@@ -88,8 +88,8 @@ Geocomp/
 
 每个样本都由具备相关地理知识的人工标注员进行评估，他们会仔细比对图像和模型的推理文本，判断是否存在上述三类幻觉。评估结果存储在 `Hallucination/` 目录下的 CSV 文件中。
 
-![幻觉评估结果统计图](docs/assets/hallucination_results.png)
-![幻觉案例分析图](docs/assets/case.png)
+![幻觉评估结果统计图](docs/human.png)
+![幻觉案例分析图](docs/case.png)
 
 ## ⚙️ 安装
 
