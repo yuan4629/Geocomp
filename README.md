@@ -76,44 +76,79 @@ Geocomp/
 ├── README.md              # README 文件 (英文版)
 └── ...                    # 其他配置文件、脚本等
 ```
-关键目录说明:src/baseline: 存放了用于比较实验的各种基准模型的实现代码和运行脚本。src/Dataset: 包含了数据下载、预处理、数据加载器以及与 Google Street View 等 API 交互以获取图像数据的相关代码 (例如 street_view_api.py)。src/Geocot: 包含实现 GeoCoT 推理框架的核心逻辑代码，以及用于运行和测试该方法的脚本。src/Geoeval: 提供了 GeoEval 评估体系的完整实现，包括计算地理距离误差、各种分类/回归指标、推理链与 Ground Truth 的相似度评估、以及幻觉检测等功能的脚本。Hallucination: 包含了对不同模型（本项目方法 GeoCoT 及基准模型 GeoReasoners, GPT-4o）推理输出进行详细人工幻觉评估后得到的原始数据（CSV 格式）。docs/assets: 存放用于本文档和项目主页的图片、图表（如 case.png）以及可能的补充 PDF 材料。📊 幻觉评估为了深入评估模型生成推理内容的可信度，我们对模型输出进行了细致的人工幻觉检查。评估过程严格遵循预定义标准，主要关注以下三种类型的幻觉错误：物体幻觉 (Object Hallucination, OH): 模型描述了图像中实际不存在的物体、特征或元素。事实幻觉 (Fact Hallucination, FH): 模型陈述了与公认的地理、文化或常识性事实不符的信息（例如，错误的地标名称、不符的地理位置关系、错误的气候描述等）。归因幻觉 (Attribution Hallucination, AH): 模型错误地解释了图像中实际存在的元素，或将其属性、来源、含义归因于错误的国家、地区、文化或对象。每个评估样本均由具备相关地理背景知识的人工标注员进行独立判断。标注员会仔细比对原始街景图像和模型的推理文本，逐项检查是否存在上述三类幻觉问题。详细的评估结果统计存储在 Hallucination/ 目录下的 CSV 文件中。⚙️ 安装# 1. 克隆仓库
-git clone [https://github.com/yydsok/Geocomp.git](https://github.com/yydsok/Geocomp.git)
+关键目录说明:src/baseline: 存放了用于比较实验的各种基准模型的实现代码和运行脚本。src/Dataset: 包含了数据下载、预处理、数据加载器以及与 Google Street View 等 API 交互以获取图像数据的相关代码 (例如 street_view_api.py)。src/Geocot: 包含实现 GeoCoT 推理框架的核心逻辑代码，以及用于运行和测试该方法的脚本。src/Geoeval: 提供了 GeoEval 评估体系的完整实现，包括计算地理距离误差、各种分类/回归指标、推理链与 Ground Truth 的相似度评估、以及幻觉检测等功能的脚本。Hallucination: 包含了对不同模型（本项目方法 GeoCoT 及基准模型 GeoReasoners, GPT-4o）推理输出进行详细人工幻觉评估后得到的原始数据（CSV 格式）。docs/assets: 存放用于本文档和项目主页的图片、图表（如 case.png）以及可能的补充 PDF 材料。📊 幻觉评估为了深入评估模型生成推理内容的可信度，我们对模型输出进行了细致的人工幻觉检查。评估过程严格遵循预定义标准，主要关注以下三种类型的幻觉错误：物体幻觉 (Object Hallucination, OH): 模型描述了图像中实际不存在的物体、特征或元素。事实幻觉 (Fact Hallucination, FH): 模型陈述了与公认的地理、文化或常识性事实不符的信息（例如，错误的地标名称、不符的地理位置关系、错误的气候描述等）。归因幻觉 (Attribution Hallucination, AH): 模型错误地解释了图像中实际存在的元素，或将其属性、来源、含义归因于错误的国家、地区、文化或对象。每个评估样本均由具备相关地理背景知识的人工标注员进行独立判断。标注员会仔细比对原始街景图像和模型的推理文本，逐项检查是否存在上述三类幻觉问题。详细的评估结果统计存储在 Hallucination/ 目录下的 CSV 文件中。
+
+## ⚙️ 安装
+
+
+
+```bash
+
+# 克隆仓库
+
+git clone https://github.com/yydsok/Geocomp.git
+
 cd Geocomp
 
-# 2. 创建并激活 Python 虚拟环境 (推荐)
+
+
+# 创建虚拟环境 (推荐)
+
 python -m venv venv
-# Linux/macOS:
-source venv/bin/activate
-# Windows:
-# venv\Scripts\activate
 
-# 3. 安装依赖库
-pip install -r requirements.txt
+source venv/bin/activate  # Linux/macOS
 
-# 4. 配置 API 密钥 (如果需要)
-# 部分功能 (如使用 src/Dataset/street_view_api.py 下载数据) 可能需要配置 Google Maps API 或其他服务的密钥。
-# 请参照相关脚本或文档说明，将密钥配置为环境变量或写入指定的配置文件中。
+# venv\Scripts\activate  # Windows
 
-# 注意：以上为标准安装步骤，具体细节请根据你的操作系统和环境进行调整。
-🚀 使用说明# 示例：使用 GeoCoT 对单张图片进行地理定位推理
-python src/Geocot/run_geocot.py --image path/to/your/image.jpg --output results/output.json
 
-# 示例：使用 GeoEval 评估模型的预测结果
-python src/Geoeval/evaluate_model.py --predictions path/to/predictions.csv --groundtruth path/to/groundtruth.csv
 
-# 示例：运行某个基准模型 (假设为 'baseline_model')
-python src/baseline/baseline_model/run.py --config configs/baseline_model_config.yaml
+# 安装依赖
 
-# 示例：运行幻觉分析脚本 (如果提供)
-# python tools/analyze_hallucination.py --input Hallucination/GeoCoT.csv --output analysis/hallucination_report.txt
+pip install -r requirements.txt # 请确保 requirements.txt 文件存在且包含所有依赖
 
-# 请注意将示例中的 [占位符] 替换为实际的文件路径或参数。
-# 详细的使用方法和参数说明，请参考各脚本文件内的注释或相关文档。
-🤝 贡献指南我们非常欢迎来自社区的各种形式的贡献，包括但不限于 Bug 反馈、功能建议、代码提交、文档改进等。如果你希望为本项目做出贡献，请参考以下建议：对于 Bug 反馈或功能建议，请通过 GitHub Issues 提交详细描述。如果你希望贡献代码，请先 Fork 本仓库，在你的分支上进行修改，并确保代码风格一致、测试通过后，提交 Pull Request。我们建议在进行较大的改动前，先通过 Issue 或其他方式与我们讨论。📄 许可证本项目采用 [MIT] 许可证。详情请参阅项目根目录下的 LICENSE 文件。📧 联系方式与引用联系: 如果您对本项目有任何疑问、建议或合作意向，欢迎通过 GitHub Issues 与我们联系，或者发送邮件至 [在此处填入你的联系邮箱地址]。引用: 如果您在您的研究工作中使用了本项目的 GeoComp 数据集、GeoCoT 方法、GeoEval 评估工具或相关代码，请考虑引用我们的论文：@misc{song2025geocomp,
-      title={Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework},
-      author={Zirui Song and Jingpu Yang and Yuan Huang and Jonathan Tonglet and Zeyu Zhang and Tao Cheng and Meng Fang and Iryna Gurevych and Xiuying Chen},
-      year={2025},
-      eprint={2502.13759},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+
+
+# 其他必要的设置步骤... (例如：API密钥配置)
+
+🚀 使用说明# 如何运行 GeoCoT 进行推理和预测
+
+python src/Geocot/run_geocot.py --image [图像路径] --output [输出路径]
+
+
+
+# 如何使用 GeoEval 进行评估
+
+python src/Geoeval/evaluate_model.py --predictions [预测结果文件] --groundtruth [真实标签文件]
+
+
+
+# 如何运行基准模型
+
+python src/baseline/[某个基准模型]/run.py --config [配置文件路径]
+
+
+
+# 如何进行幻觉分析 (如果提供了脚本)
+
+# python tools/analyze_hallucination.py --input Hallucination/GeoCoT.csv
+
+
+
+# 请根据你的项目实际情况修改或补充以上命令示例
+
+🤝 贡献指南我们欢迎各种形式的贡献！如果你想为项目做出贡献，请 [说明贡献方式，例如：查阅 CONTRIBUTING.md 文件、提交 Pull Request 或 Issue]。📄 许可证本项目采用 [在此处填写许可证名称，例如：MIT] 许可证。详情请见 LICENSE 文件（如果创建了该文件）。📧 联系方式与引用如果您对本项目有任何疑问，或者在您的研究中使用了本项目，请联系 [你的邮箱地址] 或通过 GitHub Issues 提出。如果本项目的数据集 (GeoComp)、方法 (GeoCoT) 或评估工具 (GeoEval) 对您的研究有所帮助，请考虑引用我们的论文：@misc{song2025geocomp,
+
+      title={Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework},
+
+      author={Zirui Song and Jingpu Yang and Yuan Huang and Jonathan Tonglet and Zeyu Zhang and Tao Cheng and Meng Fang and Iryna Gurevych and Xiuying Chen},
+
+      year={2025},
+
+      eprint={2502.13759},
+
+      archivePrefix={arXiv},
+
+      primaryClass={cs.CV}
+
 }
+
