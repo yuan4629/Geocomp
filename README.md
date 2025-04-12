@@ -1,13 +1,5 @@
 # Geocomp: Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2502.13759">
-    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2502.13759-b31b1b.svg">
-  </a>
-  &nbsp;&nbsp; <a href="https://huggingface.co/papers/2502.13759">
-    <img alt="Hugging Face Papers" src="https://img.shields.io/badge/🤗%20Hugging%20Face-Papers-yellow">
-  </a>
-</p>
 
 ## 📝 Introduction
 
@@ -142,12 +134,5 @@ If you have any questions about this project, or if you have used any part of th
 If the dataset (GeoComp), method (GeoCoT), or evaluation tools (GeoEval) from this project have been helpful to your research work, please consider citing our paper:
 
 ```bibtex
-@misc{song2025geocomp,
-      title={Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework},
-      author={Zirui Song and Jingpu Yang and Yuan Huang and Jonathan Tonglet and Zeyu Zhang and Tao Cheng and Meng Fang and Iryna Gurevych and Xiuying Chen},
-      year={2025},
-      eprint={2502.13759},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
+
 ```
