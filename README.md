@@ -1,7 +1,13 @@
 # Geocomp: Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework
 
-[![arXiv](https://img.shields.io/badge/arXiv-2502.13759-b31b1b.svg)](https://arxiv.org/abs/2502.13759)
-
+<p align="center">
+  <a href="https://arxiv.org/abs/2502.13759">
+    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2502.13759-b31b1b.svg">
+  </a>
+  &nbsp;&nbsp; <a href="https://huggingface.co/papers/2502.13759">
+    <img alt="Hugging Face Papers" src="https://img.shields.io/badge/🤗%20Hugging%20Face-Papers-yellow">
+  </a>
+</p>
 
 ## 📝 简介
 
