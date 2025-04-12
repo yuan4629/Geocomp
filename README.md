@@ -48,7 +48,23 @@ Geocomp 是一个专注于**图像地理定位** **Geolocation**的研究项目�
 ![地理定位范式对比图](docs/assets/paradigm_comparison.png) 
 ## 📁 代码库结构
 
-Geocomp/├── docs/                  # 文档和可能的静态资源 (例如 GitHub Pages)│   └── assets/            # 存放图片、PDF 等资源 (例如 case.png, staticcopy.pdf 相关图)├── Hallucination/         # 模型推理结果的幻觉评估数据│   ├── GeoCoT.csv│   ├── GeoReasoners.csv│   └── GPT4o.csv├── src/                   # 主要源代码│   ├── baseline/          # 各种基准模型对应的部署代码│   ├── Dataset/           # 处理地理/统计数据的代码 (例如街景API交互)│   ├── Geocot/            # 测试和评估本项目核心方法 (GeoCoT) 的基准代码│   └── Geoeval/           # 使用大语言模型进行评估的代码和基准测试工具 (GeoEval)├── README_zh.md           # 本文件 (中文版)├── README.md              # 英文版 README└── ...                    # 其他配置文件、脚本等 (如 requirements.txt)
+```text
+Geocomp/
+├── docs/                  # 文档和可能的静态资源 (例如 GitHub Pages)
+│   └── assets/            # 存放图片、PDF 等资源 (例如 case.png, staticcopy.pdf 相关图)
+├── Hallucination/         # 模型推理结果的幻觉评估数据
+│   ├── GeoCoT.csv
+│   ├── GeoReasoners.csv
+│   └── GPT4o.csv
+├── src/                   # 主要源代码
+│   ├── baseline/          # 各种基准模型对应的部署代码
+│   ├── Dataset/           # 处理地理/统计数据的代码 (例如街景API交互)
+│   ├── Geocot/            # 测试和评估本项目核心方法 (GeoCoT) 的基准代码
+│   └── Geoeval/           # 使用大语言模型进行评估的代码和基准测试工具 (GeoEval)
+├── README_zh.md           # 本文件 (中文版)
+├── README.md              # 英文版 README
+└── ...                    # 其他配置文件、脚本等 (如 requirements.txt)
+
 **关键目录说明:**
 
 * **`src/baseline`**: 存放了用于比较的各种基准模型的实现和部署脚本。
