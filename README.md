@@ -12,7 +12,7 @@ Geocomp 是一个专注于**图像地理定位** **Geolocation**的研究项目�
 
 本项目旨在通过这套框架解决当前地理定位研究中的关键瓶颈，推动领域发展。
 
-!(docs/assets/label.pdf)
+[查看项目概览 PDF](docs/assets/label.pdf)
 
 ## ✨ 主要特性
 
