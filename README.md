@@ -117,5 +117,13 @@ pip install -r requirements.txt # Please ensure requirements.txt exists and cont
 # Other necessary setup steps... (e.g., API key configuration)
 ```
 
-
+## 🚀 Usage Instructions
+```bash
+# How to run GeoCoT for reasoning and prediction
+python src/Geocot/run_geocot.py 
+# How to use GeoEval for evaluation
+python src/Geoeval/evaluate_model.py 
+# How to run baseline models
+python src/baseline/[some_baseline_model]/run.py --config [path_to_config_file]
+```
 
