@@ -119,27 +119,32 @@ python src/Geoeval/evaluate_model.py
 python src/baseline/[某个基准模型]/run.py --config [配置文件路径]
 ```
 
-🤝 贡献指南我们欢迎各种形式的贡献！如果你想为项目做出贡献，请 [说明贡献方式，例如：查阅 CONTRIBUTING.md 文件、提交 Pull Request 或 Issue]。
 
-📄 许可证本项目采用 [在此处填写许可证名称，例如：MIT] 许可证。详情请见 LICENSE 文件（如果创建了该文件）。
+## 📄 许可证
 
-📧 联系方式与引用如果您对本项目有任何疑问，或者在您的研究中使用了本项目，请联系 [你的邮箱地址] 或通过 GitHub Issues 提出。如果本项目的数据集 (GeoComp)、方法 (GeoCoT) 或评估工具 (GeoEval) 对您的研究有所帮助，请考虑引用我们的论文：@misc{song2025geocomp,
+本项目采用 **MIT** 许可证。
+详细信息请参阅项目根目录下的 `LICENSE` 文件。
 
-      title={Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework},
+## 📧 联系方式与引用
 
-      author={Zirui Song and Jingpu Yang and Yuan Huang and Jonathan Tonglet and Zeyu Zhang and Mingxuan Cui and Tao Cheng and Meng Fang and Iryna Gurevych and Xiuying Chen},
+**联系方式**
 
-      year={2025},
+如果您对本项目有任何疑问，或在您的研究中使用了本项目的任何部分，欢迎通过各种方式联系我们。
 
-      eprint={2502.13759},
+**引用**
 
-      archivePrefix={arXiv},
+如果本项目的数据集 (GeoComp)、方法 (GeoCoT) 或评估工具 (GeoEval) 对您的研究工作有所帮助，请考虑引用我们的论文：
 
-      primaryClass={cs.CV}
-
+```bibtex
+@misc{song2025geocomp,
+      title={Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework}, 
+      author={Zirui Song and Jingpu Yang and Yuan Huang and Jonathan Tonglet and Zeyu Zhang and Tao Cheng and Meng Fang and Iryna Gurevych and Xiuying Chen},
+      year={2025},
+      eprint={2502.13759},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
-
-
+```
 
 
 
