@@ -74,7 +74,7 @@ Geocomp/├── docs/                  # 文档和可能的静态资源 (例�
 
 ```bash
 # 克隆仓库
-git clone [https://github.com/](https://github.com/)[你的用户名]/Geocomp.git
+git clone https://github.com/yydsok/Geocomp.git
 cd Geocomp
 
 # 创建虚拟环境 (推荐)
