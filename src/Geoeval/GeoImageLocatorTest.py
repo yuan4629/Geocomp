@@ -5,7 +5,7 @@ import os
 from io import BytesIO
 
 # 设置 OpenAI API 密钥
-openai.api_key = ""
+openai.api_key = "KKK"
 
 def resize_image(image_path, size=(256, 256)):
     """调整图像大小"""

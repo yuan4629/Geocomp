@@ -59,7 +59,7 @@ def process_panoids_from_folder(folder_path, api_key):
 
 # 示例
 folder_path = "data/ground_truth"  # 替换为你的文件夹路径
-api_key = ""  # 替换为你的 Google Maps API Key
+api_key = "lll"  # 替换为你的 Google Maps API Key
 results = process_panoids_from_folder(folder_path, api_key)
 
 # 输出结果到文件或打印

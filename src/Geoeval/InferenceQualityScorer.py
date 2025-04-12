@@ -97,5 +97,5 @@ if __name__ == "__main__":
     ground_truth_dir = "data/gt_description"
     evaluation_dir = "data/llamas"
     output_dir = "data/llama_eval"
-    api_key = ""
+    api_key = "KKK"
     main(ground_truth_dir, evaluation_dir, output_dir, api_key)
