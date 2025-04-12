@@ -1,9 +1,9 @@
 # Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework
 
 [![arXiv](https://img.shields.io/badge/arXiv-2502.13759-b31b1b.svg)](https://arxiv.org/abs/2502.13759)
-**中文** | [English](README.md) ## 📝 简介
+## 📝 简介
 
-Geocomp 是一个专注于**图像地理定位（Geolocation）**的研究项目和代码库。地理定位任务旨在识别图像的拍摄地点，这对于导航、监控和文化遗产保护至关重要，但需要复杂的推理能力。当前方法往往产生粗糙、不精确且难以解释的定位结果，部分原因是现有数据集规模小、自动构建导致噪声多、任务难度不一致（要么过于简单，要么缺乏足够线索）。
+Geocomp 是一个专注于**图像地理定位** **Geolocation**的研究项目和代码库。地理定位任务旨在识别图像的拍摄地点，这对于导航、监控和文化遗产保护至关重要，但需要复杂的推理能力。当前方法往往产生粗糙、不精确且难以解释的定位结果，部分原因是现有数据集规模小、自动构建导致噪声多、任务难度不一致（要么过于简单，要么缺乏足够线索）。
 
 为应对这些挑战，本项目提出了一个综合性的地理定位框架，包含三大核心组件：
 1.  **GeoComp**: 一个从真实人类地理定位竞赛中收集的大规模、高质量数据集。
@@ -12,7 +12,7 @@ Geocomp 是一个专注于**图像地理定位（Geolocation）**的研究项目
 
 本项目旨在通过这套框架解决当前地理定位研究中的关键瓶颈，推动领域发展。
 
-![项目概览图](docs/assets/overview_diagram.png)
+(docs/assets/label.pdf)
 
 ## ✨ 主要特性
 
