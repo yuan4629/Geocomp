@@ -97,5 +97,5 @@ if __name__ == "__main__":
     ground_truth_dir = "data/gt_description"
     evaluation_dir = "data/llamas"
     output_dir = "data/llama_eval"
-    api_key = "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"
+    api_key = "KKK"
     main(ground_truth_dir, evaluation_dir, output_dir, api_key)

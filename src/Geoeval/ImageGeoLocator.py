@@ -5,9 +5,9 @@ import os
 from io import BytesIO
 
 # 设置 OpenAI API 密钥
-openai.api_key = "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"
+openai.api_key = "KKK"
 
-def resize_image(image_path, size=(256, 256)):
+def resize_image(image_path, size=(512, 512)):
     """调整图像大小"""
     with Image.open(image_path) as img:
         img = img.resize(size)
@@ -24,32 +24,29 @@ def process_image(image_path):
     # 编码图像
     encoded_image = encode_image_to_base64(image_path)
 
-    # 提取图片文件的前半部分命名（不包括后缀和方向后缀）
-    image_prefix = os.path.basename(image_path).replace("_east.jpg", "").replace("_west.jpg", "").replace("_north.jpg", "").replace("_south.jpg", "")
+    # 提取图片文件的前半部分命名（不包括后缀）
+    image_prefix = os.path.splitext(os.path.basename(image_path))[0]
 
     # 初始化对话消息
     messages = [
         {"role": "system", "content": "You are a helpful assistant for analyzing images."},
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"data:image/jpeg;base64,{encoded_image}"
-                        },
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/jpeg;base64,{encoded_image}"
                     },
-                ],
-            }
+                },
+            ],
+        }
     ]
 
-    questions =  ["Q1: Are there significant geographical features (mountains, trees, soil types, etc.) that can help determine the country?"
-                  "Q2: Are there local or culturally/historically significant buildings, structures, or signs in a specific language that indicate a country?"
-                  "Q3: Are there easily identifiable street elements, such as road direction (left or right), types of bollards, utility poles, or license plate colors?"
-                  "Q4: Are there recognizable signs, fire hydrants, guideposts, or other indicators that can help pinpoint the country and city?"
-                  "Q5: Are there identifiable sidewalk patterns (tile color, shape, arrangement) or clothing styles that can help determine the country or city?"
-                  """Let's think step by step. Based on the question I provided, locate the location of the picture as accurately as possible. Identify the continent, country, and city, and summarize it into a paragraph (note: it must be a paragraph).
-                  """    
+    questions =  [
+        """Locate the continent, country and city, and summarize it into a paragraph (note: it must be a paragraph). Let's think step by step.\
+        For example: the presence of tropical rainforests, palm trees, and red soil indicates a tropical climate, most likely located in Southeast Asia. The signs are in Thai and the hydrant is a green circle, indicating that it is in Thailand. Right-side traffic, cylindrical bollards with blue markings and license plates with black lettering on a white background meet Thai standards. Traditional Thai architecture, such as pitched roofs and wooden structures, further points to a specific location in Thailand. Square gray sidewalk tiles and non-motorized lanes marked with red asphalt are specific urban design features that help narrow down the location. Combining tropical vegetation, Thai-language road signs, traditional architecture, and specific urban design features, this image was most likely taken in a city in Bangkok, Thailand, Asia. 
+        """
     ]
 
     for question in questions:
@@ -81,8 +78,8 @@ def process_image(image_path):
     response = openai.ChatCompletion.create(
             model="gpt-4o",
             messages = messages,
-            temperature=0.3,
-            max_tokens=100
+            temperature=0.1,
+            max_tokens=50
         )
     reply = response["choices"][0]["message"]["content"]
     return image_prefix, final_summary, reply
@@ -93,28 +90,26 @@ def save_result(prefix, summary, summary_final, output_dir, output_dir1):
         os.makedirs(output_dir)
 
     output_path = os.path.join(output_dir, f"{prefix}.txt")
-    with open(output_path, "w", encoding="utf-8") as f:  # Corrected encoding
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(summary)
         
     if not os.path.exists(output_dir1):
         os.makedirs(output_dir1)
 
     output_path = os.path.join(output_dir1, f"{prefix}.txt")
-    with open(output_path, "w", encoding="utf-8") as f:  # Corrected encoding
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(summary_final)
-
 
 def main():
     # 图片文件路径列表
-    image_dir = "data/panoramas"  # 确保这个路径是正确的
-    image_paths = [os.path.join(image_dir, img) for img in sorted(os.listdir(image_dir)) 
-                   if img.endswith(("_east.jpg", "_west.jpg", "_north.jpg", "_south.jpg"))]
+    image_dir = "data/im2gps3k"  # 确保这个路径是正确的
+    image_paths = [os.path.join(image_dir, img) for img in sorted(os.listdir(image_dir)) if img.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp'))]
 
-    output_dir = "data/ours"  # 修改保存路径到 data/GPT
-    output_dir1 = "data/our"
+    output_dir = "data/im2gps3k_geos"  # 修改保存路径到 data/GPT
+    output_dir1 = "data/im2gps3k_geo"
 
     for image_path in image_paths:
-        prefix = os.path.basename(image_path).replace("_east.jpg", "").replace("_west.jpg", "").replace("_north.jpg", "").replace("_south.jpg", "")
+        prefix = os.path.splitext(os.path.basename(image_path))[0]
         output_path = os.path.join(output_dir, f"{prefix}.txt")
 
         # 如果文件已存在，则跳过处理

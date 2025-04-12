@@ -132,8 +132,8 @@ def process_folder_with_gpt_and_images(input_folder, image_folder, output_folder
                     out_file.write("0.0, 0.0")
 
 # 示例调用
-google_api_key = "AIzaSyA2gP66fP9yj26bt3JoVVdmv28wV1mdsoA"  # 替换为你的 Google API 密钥
-gpt_api_key = "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"   
+google_api_key = "lll"  # 替换为你的 Google API 密钥
+gpt_api_key = "kkk"   
 input_folder = "data/im2gps3k_geos"      # 输入文件夹路径
 image_folder = "data/im2gps3k"           # 图片文件夹路径
 output_folder = "data/im2gps3k_geo_LAT"  # 输出文件夹路径

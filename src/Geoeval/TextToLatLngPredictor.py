@@ -82,7 +82,7 @@ def process_folder_with_gpt(input_folder, output_folder, google_api_key, gpt_api
 
 # 示例调用
 google_api_key = "AIzaSyA2gP66fP9yj26bt3JoVVdmv28wV1mdsoA"  # 替换为你的 Google API 密钥
-gpt_api_key = "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"   
+gpt_api_key = "KKK"   # 替换原有的sk-proj-开头的密钥
 input_folder = "data/llamas_im2gps3k"             # 输入文件夹路径
 output_folder = "data/llama_im2gps3k_latlng"      # 输出文件夹路径
 process_folder_with_gpt(input_folder, output_folder, google_api_key, gpt_api_key)
