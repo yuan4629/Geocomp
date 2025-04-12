@@ -64,6 +64,7 @@ Geocomp/
 ├── README_zh.md           # 本文件 (中文版)
 ├── README.md              # 英文版 README
 └── ...                    # 其他配置文件、脚本等 (如 requirements.txt)
+```
 
 **关键目录说明:**
 
