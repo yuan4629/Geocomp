@@ -71,6 +71,7 @@ Geocomp/
 │   ├── Geocot/            # GeoCoT 核心推理框架的实现与测试代码
 │   └── Geoeval/           # GeoEval 评估体系的实现代码 (包含各种评估指标和工具)
 ├── requirements.txt       # 项目 Python 依赖库列表
+├── README_zh.md           # 本 README 文件 (中文版)
 ├── README.md              # README 文件 (英文版)
 └── ...                    # 其他配置文件、脚本等
 ```
@@ -99,12 +100,11 @@ Geocomp/
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yydsok/Geocomp.git
+git clone https://github.com/ZiruiSongBest/Geocomp.git
 cd Geocomp
 # 创建虚拟环境 (推荐)
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-# venv\Scripts\activate  # Windows
+conda create --name geocomp python=3.10
+conda activate geocomp
 # 安装依赖
 pip install -r requirements.txt # 请确保 requirements.txt 文件存在且包含所有依赖
 # 其他必要的设置步骤... (例如：API密钥配置)
@@ -116,37 +116,30 @@ python src/Geocot/run_geocot.py
 # 如何使用 GeoEval 进行评估
 python src/Geoeval/evaluate_model.py 
 # 如何运行基准模型
-python src/baseline/run.py --config [配置文件路径]
+python src/baseline/[某个基准模型]/run.py --config [配置文件路径]
 ```
 
-## 🤝 贡献指南
+🤝 贡献指南我们欢迎各种形式的贡献！如果你想为项目做出贡献，请 [说明贡献方式，例如：查阅 CONTRIBUTING.md 文件、提交 Pull Request 或 Issue]。
 
-我们热烈欢迎各种形式的贡献！如果您希望为本项目做出贡献。
+📄 许可证本项目采用 [在此处填写许可证名称，例如：MIT] 许可证。详情请见 LICENSE 文件（如果创建了该文件）。
 
-## 📄 许可证
+📧 联系方式与引用如果您对本项目有任何疑问，或者在您的研究中使用了本项目，请联系 [你的邮箱地址] 或通过 GitHub Issues 提出。如果本项目的数据集 (GeoComp)、方法 (GeoCoT) 或评估工具 (GeoEval) 对您的研究有所帮助，请考虑引用我们的论文：@misc{song2025geocomp,
 
-本项目采用 **MIT** 许可证。
-详细信息请参阅项目根目录下的 `LICENSE` 文件。
+      title={Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework},
 
-## 📧 联系方式与引用
+      author={Zirui Song and Jingpu Yang and Yuan Huang and Jonathan Tonglet and Zeyu Zhang and Mingxuan Cui and Tao Cheng and Meng Fang and Iryna Gurevych and Xiuying Chen},
 
-**联系方式**
+      year={2025},
 
-如果您对本项目有任何疑问，或在您的研究中使用了本项目的任何部分，欢迎通过各种方式联系我们。
+      eprint={2502.13759},
 
-**引用**
-如果本项目的数据集 (GeoComp)、方法 (GeoCoT) 或评估工具 (GeoEval) 对您的研究工作有所帮助，请考虑引用我们的论文：
+      archivePrefix={arXiv},
 
-```bibtex
-@misc{song2025geocomp,
-      title={Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework}, 
-      author={Zirui Song and Jingpu Yang and Yuan Huang and Jonathan Tonglet and Zeyu Zhang and Tao Cheng and Meng Fang and Iryna Gurevych and Xiuying Chen},
-      year={2025},
-      eprint={2502.13759},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      primaryClass={cs.CV}
+
 }
-```
+
+
 
 
 
