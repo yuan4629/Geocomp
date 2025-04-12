@@ -126,4 +126,28 @@ python src/Geoeval/evaluate_model.py
 # How to run baseline models
 python src/baseline/[some_baseline_model]/run.py --config [path_to_config_file]
 ```
+## 📄 License
 
+This project is licensed under the **MIT** License.
+Please see the `LICENSE` file in the project root directory for details.
+
+## 📧 Contact & Citation
+
+**Contact**
+
+If you have any questions about this project, or if you have used any part of this project in your research, please feel free to contact us through various channels.
+
+**Citation**
+
+If the dataset (GeoComp), method (GeoCoT), or evaluation tools (GeoEval) from this project have been helpful to your research work, please consider citing our paper:
+
+```bibtex
+@misc{song2025geocomp,
+      title={Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework},
+      author={Zirui Song and Jingpu Yang and Yuan Huang and Jonathan Tonglet and Zeyu Zhang and Tao Cheng and Meng Fang and Iryna Gurevych and Xiuying Chen},
+      year={2025},
+      eprint={2502.13759},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
