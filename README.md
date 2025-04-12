@@ -12,8 +12,9 @@ Geocomp 是一个专注于**图像地理定位** **Geolocation**的研究项目�
    
 本项目旨在通过这套框架解决当前地理定位研究中的关键瓶颈，推动领域发展。
 <p align="center">
-<img src="docs/lab.png" alt="实验图片描述" width="300"/>
+<img src="docs/lab.png" width="300"/>
 </p>
+
 ## ✨ 主要特性
 
 * **大规模真实世界数据集 (GeoComp)**:
@@ -38,7 +39,7 @@ Geocomp 是一个专注于**图像地理定位** **Geolocation**的研究项目�
 **Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework**
 [https://arxiv.org/abs/2502.13759](https://arxiv.org/abs/2502.13759)
 
-![GeoCoT 方法示意图](docs/assets/geocot_method.png)
+![GeoCoT 方法示意图](docs/rethinking.png)
 ![关键实验结果图](docs/assets/results_summary.png)
 
 ## 💡 重新思考地理定位任务
