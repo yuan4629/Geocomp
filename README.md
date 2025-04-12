@@ -17,7 +17,7 @@ Geocomp 是一个专注于**图像地理定位 (Geolocation)** 的研究项目�
 本项目致力于通过这套框架，解决当前地理定位研究中的关键瓶颈问题，推动该领域取得实质性进展。
 
 <p align="center">
-  <img src="docs/assets/lab.png" alt="GeoComp 项目概览或核心概念图" width="400"/>
+  <img src="docs/lab.png" alt="GeoComp 项目概览或核心概念图" width="400"/>
 </p>
 
 ## ✨ 主要特性
@@ -47,13 +47,13 @@ Geocomp 是一个专注于**图像地理定位 (Geolocation)** 的研究项目�
 ### 💡 重新思考地理定位任务
 
 <p align="center">
-  <img src="docs/assets/rethinking.png" alt="GeoCoT 方法与传统地理定位方法对比示意图" width="600"/>
+  <img src="docs/rethinking.png" alt="GeoCoT 方法与传统地理定位方法对比示意图" width="600"/>
 </p>
 
 传统的地理定位方法主要依赖于分类（将地球划分为预定义网格）或检索（在大规模数据库中匹配视觉相似图像）。这些方法虽然取得了一定进展，但在定位精度、对新区域的泛化能力以及结果的可解释性方面常表现出局限性。受人类专家进行地理定位时“由粗到精、逐步缩小范围”这一自然过程的启发，我们提出了一种新的地理定位范式：**利用大型模型生成连贯的、分步骤的自然语言推理链，最终推导出图像的精确地理位置**。GeoCoT 框架正是为实现这一生成式推理范式而设计，旨在克服传统方法的瓶颈，提升定位的准确性、鲁棒性和透明度。
 
 <p align="center">
-  <img src="docs/assets/table1.png" alt="GeoComp 数据集与其他数据集对比表格 (Table 1)" width="700"/>
+  <img src="docs/table1.png" alt="GeoComp 数据集与其他数据集对比表格 (Table 1)" width="700"/>
 </p>
 
 ## 📁 代码库结构
@@ -75,6 +75,7 @@ Geocomp/
 ├── README_zh.md           # 本 README 文件 (中文版)
 ├── README.md              # README 文件 (英文版)
 └── ...                    # 其他配置文件、脚本等
+```
 关键目录说明:src/baseline: 存放了用于比较实验的各种基准模型的实现代码和运行脚本。src/Dataset: 包含了数据下载、预处理、数据加载器以及与 Google Street View 等 API 交互以获取图像数据的相关代码 (例如 street_view_api.py)。src/Geocot: 包含实现 GeoCoT 推理框架的核心逻辑代码，以及用于运行和测试该方法的脚本。src/Geoeval: 提供了 GeoEval 评估体系的完整实现，包括计算地理距离误差、各种分类/回归指标、推理链与 Ground Truth 的相似度评估、以及幻觉检测等功能的脚本。Hallucination: 包含了对不同模型（本项目方法 GeoCoT 及基准模型 GeoReasoners, GPT-4o）推理输出进行详细人工幻觉评估后得到的原始数据（CSV 格式）。docs/assets: 存放用于本文档和项目主页的图片、图表（如 case.png）以及可能的补充 PDF 材料。📊 幻觉评估为了深入评估模型生成推理内容的可信度，我们对模型输出进行了细致的人工幻觉检查。评估过程严格遵循预定义标准，主要关注以下三种类型的幻觉错误：物体幻觉 (Object Hallucination, OH): 模型描述了图像中实际不存在的物体、特征或元素。事实幻觉 (Fact Hallucination, FH): 模型陈述了与公认的地理、文化或常识性事实不符的信息（例如，错误的地标名称、不符的地理位置关系、错误的气候描述等）。归因幻觉 (Attribution Hallucination, AH): 模型错误地解释了图像中实际存在的元素，或将其属性、来源、含义归因于错误的国家、地区、文化或对象。每个评估样本均由具备相关地理背景知识的人工标注员进行独立判断。标注员会仔细比对原始街景图像和模型的推理文本，逐项检查是否存在上述三类幻觉问题。详细的评估结果统计存储在 Hallucination/ 目录下的 CSV 文件中。⚙️ 安装# 1. 克隆仓库
 git clone [https://github.com/yydsok/Geocomp.git](https://github.com/yydsok/Geocomp.git)
 cd Geocomp
