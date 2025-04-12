@@ -39,7 +39,6 @@ This project aims to tackle key bottlenecks in current geolocation research thro
 For detailed information about this project, methodology, and comprehensive experimental results, please refer to our arXiv paper:
 
 **Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework**
-[https://arxiv.org/abs/2502.13759](https://arxiv.org/abs/2502.13759)
 
 ### 💡 Rethinking the Geolocation Task
 
@@ -99,7 +98,7 @@ Each evaluation sample was independently judged by human annotators with relevan
 ## ⚙️ Installation
 ```bash
 # Clone the repository
-git clone [https://github.com/ZiruiSongBest/Geocomp.git](https://github.com/ZiruiSongBest/Geocomp.git)
+git clone https://github.com/ZiruiSongBest/Geocomp.git
 cd Geocomp
 # Create a virtual environment (recommended)
 conda create --name geocomp python=3.10
