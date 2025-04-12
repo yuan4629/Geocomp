@@ -80,36 +80,24 @@ Geocomp/
 
 ## ⚙️ 安装
 
-```bash```
+```bash
 # 克隆仓库
 git clone https://github.com/yydsok/Geocomp.git
 cd Geocomp
-
-
-
 # 创建虚拟环境 (推荐)
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
 # venv\Scripts\activate  # Windows
-
-
 # 安装依赖
 pip install -r requirements.txt # 请确保 requirements.txt 文件存在且包含所有依赖
-
 # 其他必要的设置步骤... (例如：API密钥配置)
-
 🚀 使用说明# 如何运行 GeoCoT 进行推理和预测
 python src/Geocot/run_geocot.py 
-
 # 如何使用 GeoEval 进行评估
-
 python src/Geoeval/evaluate_model.py 
-
 # 如何运行基准模型
-
 python src/baseline/[某个基准模型]/run.py --config [配置文件路径]
-
-
+```
 
 🤝 贡献指南我们欢迎各种形式的贡献！如果你想为项目做出贡献，请 [说明贡献方式，例如：查阅 CONTRIBUTING.md 文件、提交 Pull Request 或 Issue]。
 
@@ -130,4 +118,8 @@ python src/baseline/[某个基准模型]/run.py --config [配置文件路径]
       primaryClass={cs.CV}
 
 }
+
+
+
+
 
