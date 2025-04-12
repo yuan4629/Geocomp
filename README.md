@@ -9,6 +9,7 @@ Geocomp 是一个专注于**图像地理定位** **Geolocation**的研究项目�
 1.  **GeoComp**: 一个从真实人类地理定位竞赛中收集的大规模、高质量数据集。
 2.  **GeoCoT**: 一种新颖的、模仿人类思维链的地理推理方法（Geographical Chain-of-Thought）。
 3.  **GeoEval**: 一套用于评估地理定位模型性能和推理过程的指标。
+   
 本项目旨在通过这套框架解决当前地理定位研究中的关键瓶颈，推动领域发展。
 <p align="center">
 <img src="docs/lab.png" alt="实验图片描述" width="300"/>
