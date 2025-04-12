@@ -80,8 +80,6 @@ Geocomp/
 
 ## ⚙️ 安装
 
-
-
 ```bash
 
 # 克隆仓库
@@ -125,16 +123,12 @@ python src/Geoeval/evaluate_model.py --predictions [预测结果文件] --ground
 # 如何运行基准模型
 
 python src/baseline/[某个基准模型]/run.py --config [配置文件路径]
-
-
-
 # 如何进行幻觉分析 (如果提供了脚本)
 
 # python tools/analyze_hallucination.py --input Hallucination/GeoCoT.csv
 
-
-
 # 请根据你的项目实际情况修改或补充以上命令示例
+```
 
 🤝 贡献指南我们欢迎各种形式的贡献！如果你想为项目做出贡献，请 [说明贡献方式，例如：查阅 CONTRIBUTING.md 文件、提交 Pull Request 或 Issue]。📄 许可证本项目采用 [在此处填写许可证名称，例如：MIT] 许可证。详情请见 LICENSE 文件（如果创建了该文件）。📧 联系方式与引用如果您对本项目有任何疑问，或者在您的研究中使用了本项目，请联系 [你的邮箱地址] 或通过 GitHub Issues 提出。如果本项目的数据集 (GeoComp)、方法 (GeoCoT) 或评估工具 (GeoEval) 对您的研究有所帮助，请考虑引用我们的论文：@misc{song2025geocomp,
 
