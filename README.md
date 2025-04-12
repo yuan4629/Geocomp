@@ -1,4 +1,4 @@
-# Geocomp: 基于真实人类游戏数据的地理定位：大规模数据集与类人推理框架
+# Geocomp: Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework
 
 [![arXiv](https://img.shields.io/badge/arXiv-2502.13759-b31b1b.svg)](https://arxiv.org/abs/2502.13759)
 
