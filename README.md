@@ -154,6 +154,8 @@ You may refer to `src/Geoeval/inference_example.py`, which includes examples for
 - reasoning process (string) → `data/llamas/`
 - predicted answers (city, country, continent) → `data/llama/`
 
+Our Ground Truth has been uploaded to `src/Geoeval/`
+
 ## 📄 License
 
 This project is licensed under the **MIT** License.
