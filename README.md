@@ -109,6 +109,7 @@ pip install -r requirements.txt # Please ensure requirements.txt exists and cont
 ```
 
 ## 🚀 Usage Instructions
+
 ```bash
 # How to run GeoCoT for reasoning and prediction
 python src/Geocot/run_geocot.py 
@@ -117,6 +118,42 @@ python src/Geoeval/evaluate_model.py
 # How to run baseline models
 python src/baseline/[some_baseline_model]/run.py --config [path_to_config_file]
 ```
+## 🔬 Baselines
+
+This section uses **LLama-3.2-Vision** as an example to demonstrate the baseline testing and evaluation process.
+
+- **Model Output**
+
+  ```bash
+  # Obtain reasoning process (as string) -> data/llamas/
+  python src/baseline/LLama-3.2-Vision/inference.py
+  
+  # Obtain predicted answers (city, country, continent) -> data/llama/
+  python src/baseline/LLama-3.2-Vision/inference.py
+  
+  # Obtain predicted coordinates (lat, lng) -> data/llama_latlng/
+  python src/Geoeval/LatLngPredictorGPT.py
+  ```
+
+- **Model Evaluation**
+
+  ```bash
+  # Evaluate predicted answers (Table 2), using data/llama/
+  python src/Geoeval/GeoClassificationMetrics.py
+  
+  # Evaluate prediction range (Table 3), using data/llama_latlng/
+  python src/Geoeval/GeoDistanceChecker.py
+  
+  # Evaluate reasoning ability (Table 4), using data/llamas/
+  python src/Geoeval/InferenceQualityScorer.py
+  python src/Geoeval/ScoreColumnAverager.py
+  ```
+
+You may refer to `src/Geoeval/inference_example.py`, which includes examples for both output modes:
+
+- reasoning process (string) → `data/llamas/`
+- predicted answers (city, country, continent) → `data/llama/`
+
 ## 📄 License
 
 This project is licensed under the **MIT** License.
