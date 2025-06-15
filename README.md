@@ -81,6 +81,24 @@ Key Directory Descriptions:
 * **`Hallucination`**: Contains the raw data (CSV format) from detailed manual hallucination evaluations performed on the reasoning outputs of different models (our method GeoCoT and benchmarks GeoReasoners, GPT-4o).
 * **`docs`**: Stores images, charts (like `case.png`), and potentially supplementary PDF materials used in this documentation and the project homepage.
 
+## 💾 Dataset Access & Usage
+
+The [GeoComp dataset](https://huggingface.co/datasets/ShirohAO/tuxun) is publicly available on the Hugging Face Hub. You can easily load and explore the data using the `datasets` library.
+
+**Example Usage:**
+```
+# Python
+from datasets import load_dataset
+
+# Load the dataset
+# 'train' is the name of a split in the dataset, most datasets have this part
+dataset = load_dataset("ShirohAO/tuxun", split='train')
+
+# Access and print the first row
+first_row = dataset[0]
+print(first_row)
+```
+
 ## 📊 Hallucination Evaluation
 
 To thoroughly evaluate the credibility of the model-generated reasoning content, we conducted meticulous manual hallucination checks on the model outputs. The evaluation process strictly adhered to predefined criteria, primarily focusing on the following three types of hallucinatory errors:
